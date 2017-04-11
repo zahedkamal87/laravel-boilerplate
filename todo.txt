@@ -1,0 +1,11 @@
+Finish - https://laravelcollective.com/docs/5.3/annotations
+
+
+Finish - https://github.com/spatie/laravel-analytics
+
+
+Lookup - https://laravel.com/docs/5.4/pagination
+
+Learn Using - https://github.com/laracasts/Laravel-5-Generators-Extended
+
+
