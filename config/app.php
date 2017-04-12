@@ -185,7 +185,8 @@ return [
         // Laravel Cashier (Payments, Subscriptions)
         // https://laravel.com/docs/5.4/billing
         // ------------------------------------------------
-        // @see ./config/services.php (stripe)
+        // @see ./config/services.php (stripe api keys)
+        //      ./app/User.php (Billable Trait added)
         Laravel\Cashier\CashierServiceProvider::class,
 
         // ------------------------------------------------
