@@ -7,8 +7,11 @@ use Zizaco\Entrust\EntrustPermission;
 class Permission extends EntrustPermission
 {
 
+    // ------------------------------------------------
+    // Fields
+    // ------------------------------------------------
     // name
-    //display_name
-    //description
+    // display_name
+    // description
 
 }

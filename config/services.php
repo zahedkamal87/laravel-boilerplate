@@ -29,37 +29,49 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
+    // ------------------------------------------------
+    // Laravel Cashier (Payments, Subscriptions)
+    // https://laravel.com/docs/5.4/billing
+    // ------------------------------------------------
     'stripe' => [
-        'model' => App\User::class,
-        'key' => env('STRIPE_KEY'),
+        'model'  => App\User::class,
+        'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
 
-    // socialite
-    'github' => [
-        'client_id' => 'your-github-app-id',
-        'client_secret' => 'your-github-app-secret',
-        'redirect' => 'http://your-callback-url',
+    // ------------------------------------------------
+    // Laravel Socialite (Social Authentication)
+    // https://github.com/laravel/socialite
+    // ------------------------------------------------
+    'facebook' => [
+        'client_id'     => 'your-app-id',
+        'client_secret' => 'your-app-secret',
+        'redirect'      => 'http://your-callback-url',
     ],
     'twitter' => [
-        'client_id' => 'your-github-app-id',
-        'client_secret' => 'your-github-app-secret',
-        'redirect' => 'http://your-callback-url',
-    ],
-    'facebook' => [
-        'client_id' => 'your-github-app-id',
-        'client_secret' => 'your-github-app-secret',
-        'redirect' => 'http://your-callback-url',
-    ],
-    'google' => [
-        'client_id' => 'your-github-app-id',
-        'client_secret' => 'your-github-app-secret',
-        'redirect' => 'http://your-callback-url',
+        'client_id'     => 'your-app-id',
+        'client_secret' => 'your-app-secret',
+        'redirect'      => 'http://your-callback-url',
     ],
     'linkedin' => [
-        'client_id' => 'your-github-app-id',
-        'client_secret' => 'your-github-app-secret',
-        'redirect' => 'http://your-callback-url',
+        'client_id'     => 'your-app-id',
+        'client_secret' => 'your-app-secret',
+        'redirect'      => 'http://your-callback-url',
+    ],
+    'google' => [
+        'client_id'     => 'your-app-id',
+        'client_secret' => 'your-app-secret',
+        'redirect'      => 'http://your-callback-url',
+    ],
+    'github' => [
+        'client_id'     => 'your-app-id',
+        'client_secret' => 'your-app-secret',
+        'redirect'      => 'http://your-callback-url',
+    ],
+    'bitbucket' => [
+        'client_id'     => 'your-app-id',
+        'client_secret' => 'your-app-secret',
+        'redirect'      => 'http://your-callback-url',
     ],
 
 ];

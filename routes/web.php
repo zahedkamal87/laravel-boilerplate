@@ -24,5 +24,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/manage', ['middleware' => ['permission:manage-admins'], 'uses' => 'AdminController@manageAdmins']);
 });
 
+// ------------------------------------------------
+// Laravel Socialite (Social Authentication)
+// https://github.com/laravel/socialite
+// ------------------------------------------------
 Route::get('login/github', 'Auth\LoginController@redirectToProvider');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');

@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class UserManagerController extends Controller
 {
     /**
      * Show the application dashboard.
@@ -13,6 +14,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('admin/user-manager');
     }
 }

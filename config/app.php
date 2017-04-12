@@ -177,22 +177,65 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        // cashier
+        // ------------------------------------------------
+        //   Addons
+        // ------------------------------------------------
+
+        // ------------------------------------------------
+        // Laravel Cashier (Payments, Subscriptions)
+        // https://laravel.com/docs/5.4/billing
+        // ------------------------------------------------
+        // @see ./config/services.php (stripe)
         Laravel\Cashier\CashierServiceProvider::class,
 
-        // Entrust ACL
-        Zizaco\Entrust\EntrustServiceProvider::class,
-
+        // ------------------------------------------------
+        // Laravel Tinker
+        // ------------------------------------------------
+        // https://github.com/laravel/tinker
         Laravel\Tinker\TinkerServiceProvider::class,
 
-        // image intvtnds
-        Intervention\Image\ImageServiceProvider::class,
+        // ------------------------------------------------
+        // Laravel Socialite (Social Authentication)
+        // https://github.com/laravel/socialite
+        // ------------------------------------------------
+        // Use With: facebook, twitter, linkedin, google, github, bitbucket
+        // @see ./config/services.php
+        //      ./app/Http/Controllers/LoginController.php
+        //      ./app/routes/web.php
         Laravel\Socialite\SocialiteServiceProvider::class,
 
-        // debug bar
+        // ------------------------------------------------
+        // Entrust ACL (Access Control List)
+        // https://github.com/Zizaco/entrust
+        // ------------------------------------------------
+        // @see ./config/entrust.php
+        //      ./app/Http/Middleware/Kernel.php
+        //      ./app/Permission.php
+        //      ./app/Role.php
+        //      ./app/User.php  (Traits Added)
+        Zizaco\Entrust\EntrustServiceProvider::class,
+
+        // ------------------------------------------------
+        // Image Intervention (Image Manipulation)
+        // http://image.intervention.io/getting_started/installation#laravel
+        // ------------------------------------------------
+        Intervention\Image\ImageServiceProvider::class,
+
+        // ------------------------------------------------
+        // Laravel Debug Bar
+        // https://github.com/barryvdh/laravel-debugbar
+        // ------------------------------------------------
+        // @see ./config/debugbar.php  (default is on)
         Barryvdh\Debugbar\ServiceProvider::class,
 
+        // ------------------------------------------------
+        // Google Analytics
+        // https://github.com/spatie/laravel-analytics
+        // ------------------------------------------------
+        // @see ./config/laravel-analytics.php
         Spatie\Analytics\AnalyticsServiceProvider::class,
+
+
     ],
 
     /*
@@ -241,14 +284,16 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        // Third party
-        // Entrust ACL
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'Image' => Intervention\Image\Facades\Image::class,
 
+        // ------------------------------------------------
+        //   Addon Aliases (Details in Service List)
+        // ------------------------------------------------
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Entrust' => Zizaco\Entrust\EntrustFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
+
     ],
 
 ];

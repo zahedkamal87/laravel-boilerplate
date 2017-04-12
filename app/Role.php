@@ -6,7 +6,12 @@ use Zizaco\Entrust\EntrustRole;
 
 class Role extends EntrustRole
 {
+
+    // ------------------------------------------------
+    // Fields
+    // ------------------------------------------------
     // name
-    // disply_name
+    // display_name
     // description
+
 }
