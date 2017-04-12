@@ -236,7 +236,14 @@ return [
         // @see ./config/laravel-analytics.php
         Spatie\Analytics\AnalyticsServiceProvider::class,
 
-
+        // ------------------------------------------------
+        // crud-generator CLI, (This is used with it)
+        // https://github.com/appzcoder/crud-generator
+        // ------------------------------------------------
+        // @see  app/Providers/AppServiceProvider.php
+        // @uses Collective\Html\FormFacade::class,
+        // @uses Collective\Html\HtmlFacade::class,
+        Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -295,6 +302,11 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
 
+        // ------------------------------------------------
+        // crud-generator
+        // ------------------------------------------------
+        'Form' => Collective\Html\FormFacade::class,
+        'HTML' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

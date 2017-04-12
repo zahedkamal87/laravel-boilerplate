@@ -15,10 +15,10 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 
-Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
-    Route::get('/', 'AdminController@welcome');
-    Route::get('/manage', ['middleware' => ['permission:manage-admins'], 'uses' => 'AdminController@manageAdmins']);
-});
+// Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
+//     Route::get('/', 'AdminController@welcome');
+//     Route::get('/manage', ['middleware' => ['permission:manage-admins'], 'uses' => 'AdminController@manageAdmins']);
+// });
 
 // ------------------------------------------------
 // Laravel Socialite (Social Authentication)
@@ -26,3 +26,4 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
 // ------------------------------------------------
 Route::get('login/github', 'Auth\LoginController@redirectToProvider');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+

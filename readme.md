@@ -5,6 +5,8 @@ I prefer to use highly supported addons, and only onces that are necessary.
 
 [Laravel Website](http://laravel.com)
 
+> *Status*: In Development (Not Ready to Use)
+
 ## What's Here
 
 - **Laravel 5.4**
@@ -21,8 +23,9 @@ I prefer to use highly supported addons, and only onces that are necessary.
     - Laravel/Socialite          (social login)
     - Laravel/Tinker             (utility)
     - Intervention/Image         (image manipulation)
-    - Zizaco/Entrust             (ACL Management)
-    - Barryvdh/Laravel-Debugbar  (Debug Bar in Chrome Console)
+    - Zizaco/Entrust             (acl management)
+    - Appzcoder/crud-generator   (cli tool)
+    - Barryvdh/Laravel-Debugbar  (debug bar)
 - Misc:
     - sqldump.sh
         - Temporarily used for myself at the moment.
@@ -71,6 +74,12 @@ Make sure to edit your `.env` file to reflect your database connection.
 php artisan migrate
 ```
 
+### Install Vendor Items
+Just install all the goodies
+
+```
+php artisan vendor:publish
+```
 
 ## Make this your Repository
 
@@ -98,3 +107,35 @@ npm run watch
 npm run hot      <-- You'll likely prefer hot reloading
 npm run prod
 ```
+
+# Crud Generator
+
+Create a Category Table (Already Included)
+```sh
+php artisan crud:generate Category\
+    --fields="title#string; description#string;"\
+    --view-path=admin\
+    --controller-namespace=Admin\
+    --validations="title#min:1|max:50|required; description#required;"\
+    --pagination=12\
+    --relationships="category#hasOne#App\Category"\
+    --route-group=admin
+```
+
+Create a Posts Table (Already Included)
+```sh
+php artisan crud:generate Posts\
+    --fields="title#string; content#text;"\
+    --view-path=admin\
+    --controller-namespace=Admin\
+    --validations="title#min:5|max:50|required; content#required; "\
+    --pagination=12\
+    --relationships="category#hasOne#App\Category"
+    --route-group=admin
+```
+
+---
+
+MIT, All Sub-Packages are Open Source and respected to their related Licenses.
+
+&copy; 2017 Jesse Boyer | [JREAM](http://jream.com)
